@@ -1,0 +1,30 @@
+$colors: (
+  primary: #f16d07,
+  danger: #7c1109,
+  grey-a: #15161c,
+  grey-b: #1e1f25,
+  grey-c: #363636,
+  grey-d: #b4b4b4,
+  grey-e: #15171a,
+  white: #fff,
+  black: #000,
+  primary-linear: linear-gradient(to right, #eb883b, #f26900),
+  rgba-a: rgba(255, 255, 255, 0.1),
+);
+
+$font-sizes: (
+  xs: 14px,
+  s: 15px,
+  m: 16px,
+  l: 17px,
+  xl: 18px,
+  xxl: 20px
+);
+
+$breakpoints: (
+  small: 480px,
+  medium: 768px,
+  wide: 992px,
+  large: 1024px,
+  largest: 1280px
+)

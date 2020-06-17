@@ -1,0 +1,123 @@
+.app-header {
+  @include pxRem(margin-top, 20);
+  background-color: map-get($colors, grey-e);
+  color: map-get($colors, white);
+  font-weight: 400;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  margin-left: auto;
+
+  .nav {
+    &-list {
+      display: flex;
+    }
+
+    &-item {
+      @include pxRem(padding, 35 0);
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    &-link {
+      @include pxRem(margin, 0 15);
+      @include pxRem(font-size, 14);
+      display: flex;
+    }
+  }
+
+  .has-dropdown {
+    &:after {
+      @include font-icon("\63");
+      @include pxRem(margin-left, 5);
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .nav-item {
+    &:hover {
+      @extend %default-transition;
+      color: map-get($colors, primary);
+
+      .dropdown-list {
+        visibility: visible;
+        opacity: 1;
+        top: 100%;
+      }
+    }
+  }
+  .dropdown {
+    &-list {
+      @include pxRem(width, 250);
+      @include pxRem(border-top, solid 1 map-get($colors, primary));
+      @include pxRem(padding, 15);
+      @extend %default-transition;
+      background-color: map-get($colors, grey-e);
+      visibility: hidden;
+      opacity: 0;
+      height: auto;
+      position: absolute;
+      left: 0;
+      top: 90%;
+    }
+
+    &-item {
+      @include pxRem(font-size, map-get($font-sizes, xs));
+      @include pxRem(padding, 10 5);
+      color: map-get($colors, white);
+      text-transform: capitalize;
+      transition: inherit;
+
+      &:hover {
+        @include pxRem(margin-left, 5);
+        color: inherit;
+        transition: inherit;
+      }
+    }
+  }
+}
+
+.contact-group {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  .phone-group {
+    @include pxRem(padding, 0 15 0 5);
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+  .icon-telephone {
+    @include pxRem(margin-right, 10);
+    @include pxRem(padding, 7);
+    @include pxRem(font-size, map-get($font-sizes, xxl));
+    display: inline-flex;
+    background: map-get($colors, rgba-a);
+    border-radius: 100%;
+  }
+
+  .menu-btn {
+    @include pxRem(padding, 10 17);
+    @include pxRem(font-size, map-get($font-sizes, s));
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+
+    .icon-menu {
+      @include pxRem(font-size, map-get($font-sizes, xxl));
+      @include pxRem(margin-left, 5);
+      margin-left: 5px;
+      display: flex;
+    }
+  }
+
+  &:hover {
+    @extend %default-transition;
+    color: map-get($colors, primary);
+  }
+}
