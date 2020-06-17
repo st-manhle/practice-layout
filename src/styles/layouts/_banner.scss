@@ -1,0 +1,108 @@
+.main-banner-section {
+  background-image: url(../assets/images/banner-bg-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .section-content {
+    @include pxRem(padding-left, 5);
+    @include pxRem(width, 600);
+    color: map-get($colors, white);
+    height: auto;
+    text-align: left;
+
+    .welcome,
+    .quote {
+      font-family: 'Lobster Two';
+    }
+
+    .welcome,
+    .highlight {
+      color: map-get($colors, primary);
+    }
+
+    .welcome {
+      @include pxRem(font-size, 19);
+    }
+
+    .quote {
+      @include pxRem(font-size, 60);
+      @include pxRem(padding, 30 0);
+      font-style: italic;
+    }
+
+    .description {
+      @include pxRem(font-size, map-get($font-sizes, l));
+      line-height: 1.6;
+    }
+  }
+
+  .actions-group {
+    @include pxRem(margin-top, 60);
+    display: flex;
+    align-items: center;
+  }
+
+  .book-table-btn {
+    @include pxRem(padding, 13 45 13 15);
+    @include pxRem(margin-right, 60);
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+      .icon-next {
+        right: 0;
+      }
+    }
+
+    .icon-next {
+      @include pxRem(height, 35);
+      @include pxRem(width, 35);
+      @include pxRem(right, -10);
+      transition: all .3s ease-in-out;
+      position: absolute;
+      background: map-get($colors, danger);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  @keyframes shadow-pulse
+  {
+    0% {
+      @include pxRem(box-shadow, 0 0 0 0 map-get($colors, primary));
+    }
+    100% {
+      @include pxRem(box-shadow, 0 0 0 20 rgba(0, 0, 0, 0));
+    }
+  }
+  .play-video-btn {
+    display: flex;
+    align-items: center;
+    .icon-play {
+      @include pxRem(height, 50);
+      @include pxRem(width, 50);
+      @include pxRem(font-size, map-get($font-sizes, xxl));
+      background: map-get($colors, primary-linear);
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:before {
+        @include pxRem(padding-left, 5);
+      }
+      animation: shadow-pulse 1s infinite;
+    }
+    .play-link {
+      @include pxRem(font-size, map-get($font-sizes, xl));
+      @include pxRem(margin-left, 20);
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+  }
+}
