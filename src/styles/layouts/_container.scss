@@ -1,0 +1,26 @@
+.container {
+  @include pxRem(padding, 0 15);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// 768
+@include respond-above(medium) {
+  .container {
+    @include pxRem(width, 750);
+  }
+}
+
+// 992
+@include respond-above(wide) {
+  .container {
+    @include pxRem(width, 970);
+  }
+}
+
+// 1200
+@include respond-above(largest) {
+  .container {
+    @include pxRem(width, 1110);
+  }
+}

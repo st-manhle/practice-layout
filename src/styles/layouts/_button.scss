@@ -1,0 +1,9 @@
+.btn {
+  color: map-get($colors, white);
+  border: 0;
+  text-transform: uppercase;
+}
+
+.primary-btn {
+  background: map-get($colors, primary-linear);
+}
